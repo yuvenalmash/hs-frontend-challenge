@@ -12,6 +12,7 @@ const Header = () => {
             /INTERACTION DESIGN
           </p>
         </div>
+        <img src="src/assets/images/menu.svg" alt="menu" className="w-7 h-6" />
       </nav>
     </header>
   );
