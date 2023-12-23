@@ -14,6 +14,11 @@ const Header = () => {
         </div>
         <img src="src/assets/images/menu.svg" alt="menu" className="w-7 h-6" />
       </nav>
+      <div className="hidden sm:flex w-28 h-28 bg-[#4fa16c] rounded-full absolute top-0 right-0 mr-32 mt-3 justify-center items-center">
+        <p className="font-bold text-white text-center p-3 leading-5">
+          APPLY NOW
+        </p>
+      </div>
     </header>
   );
 };
