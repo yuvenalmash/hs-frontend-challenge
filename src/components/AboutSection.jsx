@@ -2,10 +2,11 @@
 
 const AboutSection = () => {
   return (
-    <section className="about-section flex flex-col gap-[50px] px-5 relative border-2 border-lime-700 bg-red-300">
-      <div className="relative z-20 min-w-[335px]">
-        <div className="h-[155px] border rounded-t-full bg-repeat bg-[url('src/assets/images/about-pattern.png')]"></div>
-        <div className="h-[555px] border-2 border-lime-700 bg-amber-300"></div>
+    <section className="about-section flex flex-col gap-[50px] px-5 items-center relative border-2 border-lime-700 bg-red-300">
+      <div className="relative z-20 min-w-[335px] flex flex-col items-center">
+        <div className="h-[155px] w-full border rounded-t-full bg-repeat bg-[url('src/assets/images/about-pattern.png')]"></div>
+        <div className="h-[555px] w-full border-2 border-lime-700 bg-amber-300"></div>
+        <img className="absolute z-10 top-10 w-[252px] h-[252px] object-cover rounded-full" src="src/assets/images/about-small.png" alt="About image" />
       </div>
       <div className="absolute z-10 top-[155px] min-w-full h-[401px] border-2 border-amber-700 bg-[--color-primary] -mx-5"></div>
 
