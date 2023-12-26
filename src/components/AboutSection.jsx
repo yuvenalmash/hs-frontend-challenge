@@ -18,7 +18,33 @@ const AboutSection = () => {
       <div className="absolute z-10 top-[170px] min-w-full h-[401px] border-2 border-amber-700 bg-[--color-primary] -mx-5"></div>
 
       <div className="relative z-20 flex flex-col gap-16 min-w-[335px]">
-        <div className="h-[210px] border-2 border-red-700 bg-amber-300">
+        <div className="flex flex-col px-[25px] gap-[24px] border-2 border-red-700 bg-amber-300">
+          <div>
+            <h3 className="text-[--color-primary] text-[16px]">
+              Fellowiship value</h3>
+            <p className="text-[24px] leading-[24px]">
+              €31,300</p>
+          </div>
+          <div className="flex gap-[44px]">
+            <div>
+              <h3 className="text-[--color-primary] text-[16px]">
+                Tution</h3>
+              <p className="text-[24px] leading-[24px]">
+                €22,900</p>
+            </div>
+            <div>
+              <h3 className="text-[--color-primary] text-[16px]">
+                Remaining</h3>
+              <p className="text-[24px] leading-[24px]">
+                €8,400</p>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-[--color-primary] text-[16px]">
+              Living Stipend</h3>
+            <p className="text-[24px] leading-[24px]">
+              €8,400 (€700/month)</p>
+          </div>
         </div>
         <div className="flex flex-col gap-8 border-2 border-red-700 bg-amber-300">
           <div className="h-[263px] border"></div>
