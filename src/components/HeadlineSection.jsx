@@ -2,20 +2,27 @@
 
 const HeadlineSection = () => {
   return (
-    <section className="headline-section flex flex-col items-center justify-center gap-10 px-4 py-28 border-2 border-[#ff8d4b] sm:gap-5 md:py-20 md:flex-row-reverse md:items-stretch md:gap-6">
-      <h1 className={"text-[--color-primary] text-3xl font-bold md:hidden"}>
-        Interaction Design Apprenticeship
-      </h1>
+    <section className="headline-section flex flex-col items-center justify-center gap-10 px-4 border-2 border-[#ff8d4b] sm:gap-5 md:flex-row-reverse md:items-stretch md:gap-6 lg:gap-[160px]">
+      <div className="small-title relative min-h-[172px] flex items-end">
+        <h1 className="px-[20px] text-[--color-primary] text-[35px] leading-10 font-bold md:hidden relative z-10">
+          Interaction Design Apprenticeship
+        </h1>
+        <img
+          src="src/assets/images/interaction-design.svg"
+          alt="interaction-icon"
+          className="w-[133px] h-[133px] border border-orange-400 rotate-[20.048deg] absolute bottom-0 right-0 transform -translate-y-5 -translate-x-5"
+        />
+      </div>
 
-      <div className="flex flex-col gap-5 sm:min-w-[240px] max-w-[480px]">
-        <div>
-          <div className="flex gap-2">
+      <div className="flex flex-col gap-5 px-[20px] sm:min-w-[240px] max-w-[480px]">
+        <div className="flex flex-col gap-2 md:flex-row-reverse md:items-center md:justify-end md:gap-[40px]">
+          <div className="flex md:flex-col md:gap-[10px]">
             <p className="text-sm">
               Powered by: </p>
             <p className="text-sm font-bold">
               Zeptolab</p>
           </div>
-          <img src="src/assets/images/zeptolab-logo.svg" alt="Zeptolab-logo" />
+          <img src="src/assets/images/zeptolab-logo.svg" alt="Zeptolab-logo" className="w-[62px] h-[62px] md:w-[80px] md:h-[80px]"/>
         </div>
         <div className="flex flex-col gap-4">
           <div className="flex-col gap-4 border rounded-md px-6 py-7">
@@ -48,7 +55,7 @@ const HeadlineSection = () => {
       </div>
 
       <div className="flex flex-col gap-8 px-7 sm:px-0 sm:min-w-[220px] md:max-w-[300px] max-w-[440px]">
-        <h1 className={"text-[--color-primary] text-3xl font-bold hidden md:block"}>
+        <h1 className="text-[--color-primary] text-[46px] leading-[56px] font-bold hidden md:block">
           Interaction Design Apprenticeship
         </h1>
         <p className="font-bold">
@@ -58,7 +65,7 @@ const HeadlineSection = () => {
           <p>
             Harbour.Space has partnered with SCG to empower driven talent and eliminate the barriers to accessing exceptional education and career opportunities through a Masters Fellowship.
           </p>
-          <p>
+          <p className="block md:hidden">
             Scholarship candidates will receive full financial support to complete their Masters program at Harbour.Space while gaining invaluable work experience through an internship with SCG, a leading company in the industry.
           </p>
         </div>
