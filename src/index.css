@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: #685DC5;
+  --color-secondary: #535353;
+  --color-tertiary: #F2F2F2;
+  --color-border: #DADADA;
+  --color-bg: #FFFFFF;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,4 +18,10 @@
 
 body {
   min-height: 100vh;
+  color: var(--color-secondary);
+  background-color: var(--color-bg);
+}
+
+border-box {
+  border: 1px solid var(--color-border);
 }
