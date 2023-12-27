@@ -7,7 +7,7 @@ const AboutSection = () => {
         <div className="h-[155px] w-full border rounded-t-full bg-repeat bg-[url('src/assets/images/about-pattern.png')]"></div>
         <img
           className="absolute z-10 top-10 w-[252px] h-[252px] object-cover rounded-full"
-          src="src/assets/images/about-small.png"
+          src="src/assets/images/about-small.svg"
           alt="About image"
         />
         <div className="w-full flex flex-col pt-[179px] pb-[56px] px-[22px] gap-8 border-2 border-lime-700 bg-amber-300">
