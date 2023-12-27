@@ -3,14 +3,19 @@
 const AboutSection = () => {
   return (
     <section className="about-section flex flex-col gap-[50px] px-5 mt-[72px] pb-[129px] items-center relative border-2 border-lime-700 bg-red-300">
-      <div className="relative z-20 min-w-[335px] flex flex-col items-center">
-        <div className="h-[155px] w-full border rounded-t-full bg-repeat bg-[url('src/assets/images/about-pattern.png')]"></div>
+      <div className="relative z-20 min-w-[335px] flex flex-col items-center md:flex-row md:gap-[99px] lg:gap-[199px]">
+        <div className="h-[155px] w-full border rounded-t-full md:rounded-full md:h-[338px] md:w-[338px] lg:h-[438px] lg:w-[438px] bg-repeat bg-[url('src/assets/images/about-pattern.png')]"></div>
         <img
-          className="absolute z-10 top-10 w-[252px] h-[252px] object-cover rounded-full"
+          className="absolute z-10 top-10 w-[252px] h-[252px] object-cover rounded-full md:hidden"
           src="src/assets/images/about-small.svg"
           alt="About image"
         />
-        <div className="w-full flex flex-col pt-[179px] pb-[56px] px-[22px] gap-8 border-2 border-lime-700 bg-amber-300">
+        <img
+          className="absolute z-10 left-7 md:h-[280px] md:w-[280px] lg:w-[380px] lg:h-[380px] object-cover rounded-full hidden md:block"
+          src="src/assets/images/about-large.svg"
+          alt="About image"
+        />
+        <div className="w-full flex flex-col pt-[179px] pb-[56px] px-[22px] gap-8 md:py-0 md:gap-[40px] md:w-[350px] lg:w-[440spx] border-2 border-lime-700 bg-amber-300">
           <h2 className="text-[--color-primary] text-[35px] leading-[40px] font-bold">
             About the apprenticeship
           </h2>
@@ -22,7 +27,7 @@ const AboutSection = () => {
           </p>
         </div>
       </div>
-      <div className="absolute z-10 top-[170px] min-w-full h-[401px] border-2 border-amber-700 bg-[--color-primary] -mx-5"></div>
+      <div className="absolute z-10 top-[170px] min-w-full h-[401px] border-2 border-amber-700 bg-[--color-primary] -mx-5 md:hidden"></div>
 
       <div className="relative z-20 flex flex-col gap-16 min-w-[335px]">
         <div className="flex flex-col px-[25px] gap-[24px] border-2 border-red-700 bg-amber-300">
