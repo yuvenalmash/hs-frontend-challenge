@@ -91,11 +91,13 @@ const AboutSection = () => {
               </p>
             </div>
           </div>
+          
           <div className="flex items-center justify-between">
-            <hr className="w-1/3 border" />
+            <hr className="w-[33%] sm:w-[40%] border" />
             <p>Graduation</p>
-            <hr className="w-1/3 border" />
+            <hr className="w-[33%] sm:w-[40%] border" />
           </div>
+
           <div className="flex flex-col gap-2 px-[24px] pt-[40px] pb-[32px] border">
             <h3 className="text-[--color-primary] text-[16px]">
               A full-time contract
