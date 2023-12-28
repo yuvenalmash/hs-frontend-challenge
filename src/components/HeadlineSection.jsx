@@ -1,11 +1,41 @@
 // HeadlineSection component
 
+import { useSelector } from "react-redux";
+import { selectData } from "../app/habourSpaceSlice";
+import Countdown from "./helpers/Countdown";
+
 const HeadlineSection = () => {
+  const data = useSelector(selectData);
+
+  // section dynamic data
+  const title = data.scholarship.name;
+  const description = data.scholarship.description[0].data;
+  const location = data.scholarship.location.name;
+  const duration = data.scholarship.duration;
+  const applicationDeadlineStr = data.scholarship.application_end_date;
+  const scholarshipStartDateStr = data.scholarship.scholarship_start_date;
+
+  // format dates
+  const applicationDeadline = new Date(
+    applicationDeadlineStr
+  ).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+  const scholarshipStartDate = new Date(
+    scholarshipStartDateStr
+  ).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
   return (
     <section className="headline-section flex flex-col items-center justify-center gap-10 px-4 border-2 border-[#ff8d4b] sm:gap-5 md:mt-[130px] md:flex-row-reverse md:items-stretch md:gap-6 lg:gap-[160px]">
       <div className="small-title relative min-h-[172px] flex items-end md:hidden">
         <h1 className="px-[20px] text-[--color-primary] text-[35px] leading-10 font-bold relative z-10">
-          Interaction Design Apprenticeship
+          {title}
         </h1>
         <img
           src="src/assets/images/interaction-design.svg"
@@ -31,19 +61,17 @@ const HeadlineSection = () => {
             <p className="text-[--color-primary] text-sm font-bold ">
               Application closes in
             </p>
-            <p className="text-[20px] lg:text-[27px]">
-              6 Day : 22 Hrs : 56 Min : <span>13 Sec</span>
-            </p>
+            <Countdown targetDate={applicationDeadlineStr} />
           </div>
           <div className="grid grid-cols-2 gap-4 border rounded-md px-6 py-7">
             <div>
               <p className="text-[--color-primary] text-sm">Location</p>
-              <p>Bangkok</p>
+              <p>{location}</p>
             </div>
             <div>
               <p className="text-[--color-primary] text-sm">Duration</p>
               <p>
-                1 Year <span className="sm:hidden">Full-Time</span>
+                {duration} Year <span className="sm:hidden">Full-Time</span>
               </p>
               <p className="hidden sm:block">Full-Time</p>
             </div>
@@ -51,11 +79,11 @@ const HeadlineSection = () => {
               <p className="text-[--color-primary] text-sm">
                 Application deadline
               </p>
-              <p>30 June 2020</p>
+              <p>{applicationDeadline}</p>
             </div>
             <div>
               <p className="text-[--color-primary] text-sm">Start date</p>
-              <p>3 Aug 2020</p>
+              <p>{scholarshipStartDate}</p>
             </div>
           </div>
         </div>
@@ -64,7 +92,7 @@ const HeadlineSection = () => {
       <div className="flex flex-col gap-8 px-7 sm:px-0 sm:min-w-[220px] md:max-w-[440px]">
         <div className="relative border border-black hidden md:block">
           <h1 className="text-[--color-primary] text-[48px] leading-[56px] font-bold hidden md:block border border-black">
-            Interaction Design Apprenticeship
+            {title}
           </h1>
           <img
             src="src/assets/images/interaction-design.svg"
@@ -77,11 +105,7 @@ const HeadlineSection = () => {
           A fully funded work-study program to launch your tech career
         </p>
         <div className="flex flex-col gap-6">
-          <p>
-            Harbour.Space has partnered with SCG to empower driven talent and
-            eliminate the barriers to accessing exceptional education and career
-            opportunities through a Masters Fellowship.
-          </p>
+          <p>{description}</p>
           <p className="block md:hidden">
             Scholarship candidates will receive full financial support to
             complete their Masters program at Harbour.Space while gaining
