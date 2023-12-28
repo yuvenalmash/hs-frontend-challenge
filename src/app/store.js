@@ -1,12 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
+// store.js
 
-// Dummy reducer as a placeholder
-const dummyReducer = (state = {}, action) => {
-  return state;
-};
+import { configureStore } from "@reduxjs/toolkit";
+import habourSpaceReducer from "./habourSpaceSlice";
 
 export const store = configureStore({
   reducer: {
-    dummy: dummyReducer,
+    habourSpace: habourSpaceReducer,
   },
 });
