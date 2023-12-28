@@ -33,9 +33,9 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="faq-section px-[43px] pt-[70px] pb-[113px] bg-purple-300">
-      <div className="flex flex-col gap-[32px] items-center">
-        <h2 className="text-[--color-primary] text-[35px] leading-[40px] font-bold text-center">
+    <section className="faq-section px-[43px] pt-[70px] pb-[113px] md:pt-[170px] md:px-[142px] bg-purple-300">
+      <div className="flex flex-col gap-[32px] items-center md:flex-row md:justify-between">
+        <h2 className="text-[--color-primary] text-[35px] leading-[40px] font-bold">
           Frequently Asked Questions
         </h2>
         <div className="flex flex-col gap-[8px]">
@@ -53,8 +53,9 @@ const FAQSection = () => {
         </div>
       </div>
 
-      <div className="mt-[40px]">
-        {Object.keys(faq).map((key, index, array) => {
+      <div className="mt-[40px] md:mt-[64px]">
+        <hr className="border w-full mb-[32px] hidden md:block" />
+        {Object.keys(faq).map((key) => {
           const item = faq[key];
           return (
             <React.Fragment key={key}>
@@ -64,7 +65,7 @@ const FAQSection = () => {
                   <p className="text-2xl">+</p>
                 </button>
               </div>
-              {index !== array.length - 1 && <hr className="border w-full mb-[18px]" />}
+              <hr className="border w-full mb-[18px] md:mb-[32px]" />
             </React.Fragment>
           );
         })}
