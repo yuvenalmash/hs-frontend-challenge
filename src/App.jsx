@@ -7,11 +7,12 @@ import AboutSection from "./components/AboutSection";
 import TestimonialsSlider from "./components/TestimonialsSlider";
 import FAQSection from "./components/FAQSection";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fetchData } from "./app/habourSpaceSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData, selectData } from "./app/habourSpaceSlice";
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
+  const data = useSelector(selectData);
 
   useEffect(() => {
     dispatch(fetchData());
@@ -19,13 +20,19 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <main>
-        <HeadlineSection />
-        <AboutSection />
-        <TestimonialsSlider />
-        <FAQSection />
-      </main>
+      {data ? (
+        <>
+          <Header />
+          <main>
+            <HeadlineSection />
+            <AboutSection />
+            <TestimonialsSlider />
+            <FAQSection />
+          </main>
+        </>
+      ) : (
+        <div>Loading...</div>
+      )}
     </div>
   );
 }
