@@ -1,10 +1,9 @@
 // habourSpaceSlice.js
 
-import { createSlice } from "@reduxjs/toolkit";
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-  data: {},
+  data: null,
   error: null,
 };
 
@@ -28,7 +27,6 @@ export const habourSpaceSlice = createSlice({
       })
       .addCase(fetchData.fulfilled, (state, action) => {
         state.data = action.payload;
-        console.log(action.payload);
       })
       .addCase(fetchData.rejected, (state, action) => {
         state.error = action.payload;
