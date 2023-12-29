@@ -38,7 +38,7 @@ const HeadlineSection = () => {
           {title}
         </h1>
         <img
-          src="src/assets/images/interaction-design.svg"
+          src="/assets/images/interaction-design.svg"
           alt="interaction-design-icon"
           className="w-[133px] h-[133px] rotate-[20.048deg] absolute bottom-0 right-0 transform -translate-y-5 -translate-x-5"
         />
@@ -51,7 +51,7 @@ const HeadlineSection = () => {
             <p className="text-sm font-bold">Zeptolab</p>
           </div>
           <img
-            src="src/assets/images/zeptolab-logo.svg"
+            src="/assets/images/zeptolab-logo.svg"
             alt="Zeptolab-logo"
             className="w-[62px] h-[62px] md:w-[80px] md:h-[80px]"
           />
@@ -95,7 +95,7 @@ const HeadlineSection = () => {
             {title}
           </h1>
           <img
-            src="src/assets/images/interaction-design.svg"
+            src="/assets/images/interaction-design.svg"
             alt="interaction-design-icon"
             className="w-[206px] h-[206px] rotate-[20deg] absolute top-0 right-0 transform -translate-y-12 -translate-x-2 hidden md:block"
           />

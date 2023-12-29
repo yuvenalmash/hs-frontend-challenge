@@ -14,7 +14,7 @@ const testimonials = {
       "This Fellowship was a turning point in my career. I wouldn’t be where I am today without the financial support and experienced offered through the program.",
     course: "B.A. Visual Design",
     industry: "Education",
-    image: "src/assets/images/irene-pereyra.svg",
+    image: "/assets/images/irene-pereyra.svg",
   },
   2: {
     name: "Irene Pereyra2",
@@ -23,7 +23,7 @@ const testimonials = {
       "This Fellowship was a turning point in my career. I wouldn’t be where I am today without the financial support and experienced offered through the program.",
     course: "B.A. Visual Design",
     industry: "Education",
-    image: "src/assets/images/irene-pereyra.svg",
+    image: "/assets/images/irene-pereyra.svg",
   },
   3: {
     name: "Irene Pereyra3",
@@ -32,7 +32,7 @@ const testimonials = {
       "This Fellowship was a turning point in my career. I wouldn’t be where I am today without the financial support and experienced offered through the program.",
     course: "B.A. Visual Design",
     industry: "Education",
-    image: "src/assets/images/irene-pereyra.svg",
+    image: "/assets/images/irene-pereyra.svg",
   },
   4: {
     name: "Irene Pereyra4",
@@ -41,7 +41,7 @@ const testimonials = {
       "This Fellowship was a turning point in my career. I wouldn’t be where I am today without the financial support and experienced offered through the program.",
     course: "B.A. Visual Design",
     industry: "Education",
-    image: "src/assets/images/irene-pereyra.svg",
+    image: "/assets/images/irene-pereyra.svg",
   },
 };
 
@@ -83,8 +83,8 @@ const TestimonialsSlider = () => {
   return (
     <section className="testimonialsSlider relative flex flex-col items-center justify-center px-[20px]">
       <div className=" absolute top-0 left-0 z-10 h-[257px] w-full bg-[--color-primary] md:flex md:justify-center md:bg-transparent md:h-[394px]">
-        <div className="md:hidden w-[292px] h-[257px] border border-[#6254BF] bg-repeat bg-[url('src/assets/images/testimonial-pattern.png')]"></div>
-        <div className="hidden md:block w-[80%] h-full border bg-repeat bg-[url('src/assets/images/about-pattern.png')]"></div>
+        <div className="md:hidden w-[292px] h-[257px] border border-[#6254BF] bg-repeat bg-[url('/assets/images/testimonial-pattern.png')]"></div>
+        <div className="hidden md:block w-[80%] h-full border bg-repeat bg-[url('/assets/images/about-pattern.png')]"></div>
       </div>
       <Carousel
         showArrows={true}
@@ -112,7 +112,7 @@ const TestimonialsSlider = () => {
             <div className="flex justify-between items-baseline py-[30px] px-[11px] md:px-[60px]">
               <div className="flex gap-[15px]">
                 <img
-                  src="src/assets/images/irene-pereyra.svg"
+                  src="/assets/images/irene-pereyra.svg"
                   alt="avatar"
                   className="w-[45px] h-[45px] md:w-[60px] md:h-[60px] rounded-full"
                 />
