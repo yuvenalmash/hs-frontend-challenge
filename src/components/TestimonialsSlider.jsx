@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import { number } from "@storybook/addon-knobs";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const testimonials = {
   1: {
@@ -107,7 +108,7 @@ const TestimonialsSlider = () => {
             key={key}
             className="slider flex flex-col px-[23px] md:w-[55.5%] border border-lime-500 bg-orange-500"
           >
-            <div className="flex justify-between py-[30px] px-[11px] md:px-[60px]">
+            <div className="flex justify-between items-baseline py-[30px] px-[11px] md:px-[60px]">
               <div className="flex gap-[15px]">
                 <img
                   src="src/assets/images/irene-pereyra.svg"
@@ -123,8 +124,8 @@ const TestimonialsSlider = () => {
                   </p>
                 </div>
               </div>
-              <a href="#" className="text-[16px] leading-[24px]">
-                🔗
+              <a href="#" className="text-[27px] pb-2 leading-[24px]">
+                <FaLinkedinIn />
               </a>
             </div>
             <div className="flex flex-col text-start items-center justify-start px-[11px] md:px-[60px]">
