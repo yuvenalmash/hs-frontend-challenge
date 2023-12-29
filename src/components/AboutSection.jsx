@@ -1,6 +1,22 @@
 // AboutSection component
 
+import { useSelector } from "react-redux";
+import { selectData } from "../app/habourSpaceSlice";
+
 const AboutSection = () => {
+  const data = useSelector(selectData);
+
+  // section dynamic data
+  const aboutDescription = data.scholarship.about[0].data;
+  const scholarshipValue = data.scholarship.total_value;
+  const tuition = data.scholarship.tuition;
+  const stipend_per_year = data.scholarship.stipend_per_year;
+  const stipend_per_month = data.scholarship.stipend_per_month;
+  const studyCommitment = data.scholarship.study_commitment;
+  const studyCommitmentText = data.scholarship.study_commitment_text;
+  const internshipCommitment = data.scholarship.internship_commitment;
+  const internshipCommitmentText = data.scholarship.internship_commitment_text;
+
   return (
     <section className="about-section flex flex-col gap-[50px] px-5 mt-[72px] pb-[129px] items-center relative border-2 border-lime-700 bg-red-300">
       <div className="relative z-20 min-w-[335px] flex flex-col items-center md:flex-row md:gap-[50px] lg:gap-[199px]">
@@ -19,12 +35,7 @@ const AboutSection = () => {
           <h2 className="text-[--color-primary] text-[35px] leading-[40px] font-bold">
             About the apprenticeship
           </h2>
-          <p className="text-[18px] leading-[28px]">
-            Our scholarships are designed to give talented and driven young
-            people from any background access to top-class education, experience
-            and network. We offer a fully-funded master&apo;s degree alongside
-            an apprenticeship and a guaranteed job upon graduation.
-          </p>
+          <p className="text-[18px] leading-[28px]">{aboutDescription}</p>
         </div>
       </div>
       <div className="absolute z-10 top-[170px] min-w-full h-[401px] border-2 border-amber-700 bg-[--color-primary] -mx-5 md:hidden"></div>
@@ -36,20 +47,22 @@ const AboutSection = () => {
               <span className="md:hidden">Fellowiship value</span>
               <span className="hidden md:block">Scholarship value</span>
             </h3>
-            <p className="text-[24px] leading-[24px] md:text-[48px]">€31,300</p>
+            <p className="text-[24px] leading-[24px] md:text-[48px]">
+              €{scholarshipValue}
+            </p>
           </div>
           <hr className="border w-full mt-[188px] mb-[61px] hidden md:block" />
           <div className="flex gap-[44px]">
             <div>
               <h3 className="text-[--color-primary] text-[16px]">Tution</h3>
               <p className="text-[24px] leading-[24px] md:text-[16px]">
-                €22,900
+                €{tuition}
               </p>
             </div>
             <div>
               <h3 className="text-[--color-primary] text-[16px]">Remaining</h3>
               <p className="text-[24px] leading-[24px] md:text-[16px]">
-                €8,400
+                €{scholarshipValue - tuition}
               </p>
             </div>
           </div>
@@ -58,7 +71,7 @@ const AboutSection = () => {
               Living Stipend
             </h3>
             <p className="text-[24px] leading-[24px] md:text-[16px]">
-              €8,400 (€700/month)
+              €{stipend_per_year} (€{stipend_per_month}/month)
             </p>
           </div>
         </div>
@@ -69,11 +82,12 @@ const AboutSection = () => {
               <h3 className="text-[--color-primary] text-[16px]">
                 Study Commitment
               </h3>
-              <p className="text-[24px] leading-[24px]">3 hours / day</p>
+              <p className="text-[24px] leading-[24px]">
+                {studyCommitment} hours / day
+              </p>
               <hr className="mt-[24px] w-1/12 border" />
               <p className="text-[16px] leading-[24px]">
-                You will complete 15 modules to graduate. Daily classes are 3
-                hours, plus coursework to complete in your own time.
+                {studyCommitmentText}
               </p>
             </div>
             <div className="flex flex-col gap-2 px-[24px] pt-[40px] pb-[32px] border md:pt-[32px] md:w-[250px] lg:w-[320px]">
@@ -81,17 +95,16 @@ const AboutSection = () => {
                 <span className="md:hidden">Apprenticeship Commitment</span>
                 <span className="hidden md:block">Work Commitment</span>
               </h3>
-              <p className="text-[24px] leading-[24px]">4 hours / day</p>
+              <p className="text-[24px] leading-[24px]">
+                {internshipCommitment} hours / day
+              </p>
               <hr className="mt-[24px] w-1/12 border" />
               <p className="text-[16px] leading-[24px]">
-                Immerse yourself in the professional world during your
-                apprenticeship. You&apos;ll learn the ropes from the best and
-                get to apply your newly acquired knowledge in the field from day
-                one.
+                {internshipCommitmentText}
               </p>
             </div>
           </div>
-          
+
           <div className="flex items-center justify-between">
             <hr className="w-[33%] sm:w-[40%] border" />
             <p>Graduation</p>
