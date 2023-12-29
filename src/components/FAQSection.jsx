@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectData } from "../app/habourSpaceSlice";
+import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
 
 const FAQSection = () => {
   const data = useSelector(selectData);
@@ -87,16 +88,15 @@ const FAQSection = () => {
                 </div>
               </div>
               <button
-                className={`w-[32px] h-[32px] border rounded-full ${
+                className={`w-[32px] h-[32px] border rounded-full flex justify-center items-center ${
                   visibleQuestions[index]
-                    ? "bg-[--color-primary] transform rotate-360 transition-all duration-1000"
+                    ? "bg-[--color-primary] transform rotate-480 transition-all duration-1000"
                     : ""
                 }`}
-                // className="w-[32px] h-[32px] border rounded-full"
                 onClick={() => toggleQuestion(index)}
               >
                 <p className="text-2xl">
-                  {visibleQuestions[index] ? "-" : "+"}
+                  {visibleQuestions[index] ? <HiOutlineMinus /> : <HiOutlinePlus />}
                 </p>
               </button>
             </div>
