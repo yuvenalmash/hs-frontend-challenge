@@ -41,7 +41,7 @@ const AboutSection = () => {
       <div className="absolute z-10 top-[170px] min-w-full h-[401px] bg-[--color-primary] -mx-5 md:hidden"></div>
 
       <div className="relative z-20 flex flex-col gap-16 min-w-[335px] md:flex-row md:gap-4 lg:gap-16">
-        <div className="flex flex-col px-[25px] gap-[24px] md:py-[32px]">
+        <div className="flex flex-col px-[25px] gap-[24px] border md:py-[32px]">
           <div className="flex flex-col md:gap-[33px]">
             <h3 className="text-[--color-primary] text-[16px]">
               <span className="md:hidden">Fellowiship value</span>
@@ -51,7 +51,7 @@ const AboutSection = () => {
               €{scholarshipValue}
             </p>
           </div>
-          <hr className="border w-full mt-[188px] mb-[61px] hidden md:block" />
+          <hr className="border w-full mt-[210px] mb-[61px] hidden md:block" />
           <div className="flex gap-[44px]">
             <div>
               <h3 className="text-[--color-primary] text-[16px]">Tution</h3>
