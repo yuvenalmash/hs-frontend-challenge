@@ -12,6 +12,7 @@ const FAQSection = () => {
 
   // drop-down menu
   const [selectedOption, setSelectedOption] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
@@ -69,20 +70,29 @@ const FAQSection = () => {
         <hr className="border w-full mb-[32px] hidden md:block" />
         {filteredFaqs.map((faq, index) => (
           <React.Fragment key={index}>
-            <div className="flex justify-between pb-[16px]">
-              <p className="text-[--color-primary]">{faq.type}</p>
-              <div className="flex flex-col md:w-[300px] lg:w-[500px]">
+            <div className="flex justify-between pb-[16px] sm:gap-5">
+              <p className="text-[--color-primary] hidden md:block">
+                {faq.type}
+              </p>
+              <div className="flex flex-col  md:w-[300px] lg:w-[500px]">
                 <p className="font-bold">{faq.question}</p>
-                <p
-                  className={`mt-[20px] ${
-                    visibleQuestions[index] ? "" : "hidden"
+                <div
+                  className={`overflow-hidden transition-all duration-1000 ease-in-out ${
+                    visibleQuestions[index]
+                      ? "h-auto opacity-100"
+                      : "h-0 opacity-0"
                   }`}
                 >
-                  {faq.answer[0].data}
-                </p>
+                  <p className="mt-[20px]">{faq.answer[0].data}</p>
+                </div>
               </div>
               <button
-                className="w-[32px] h-[32px] border rounded-full"
+                className={`w-[32px] h-[32px] border rounded-full ${
+                  visibleQuestions[index]
+                    ? "bg-[--color-primary] transform rotate-360 transition-all duration-1000"
+                    : ""
+                }`}
+                // className="w-[32px] h-[32px] border rounded-full"
                 onClick={() => toggleQuestion(index)}
               >
                 <p className="text-2xl">
