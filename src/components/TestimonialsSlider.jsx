@@ -14,7 +14,7 @@ const testimonials = {
       "This Fellowship was a turning point in my career. I wouldn’t be where I am today without the financial support and experienced offered through the program.",
     course: "B.A. Visual Design",
     industry: "Education",
-    image: "src/assets/images/irene-pereyra.svg",
+    image: "/assets/images/irene-pereyra.svg",
   },
   2: {
     name: "Irene Pereyra2",
@@ -23,7 +23,7 @@ const testimonials = {
       "This Fellowship was a turning point in my career. I wouldn’t be where I am today without the financial support and experienced offered through the program.",
     course: "B.A. Visual Design",
     industry: "Education",
-    image: "src/assets/images/irene-pereyra.svg",
+    image: "/assets/images/irene-pereyra.svg",
   },
   3: {
     name: "Irene Pereyra3",
@@ -32,7 +32,7 @@ const testimonials = {
       "This Fellowship was a turning point in my career. I wouldn’t be where I am today without the financial support and experienced offered through the program.",
     course: "B.A. Visual Design",
     industry: "Education",
-    image: "src/assets/images/irene-pereyra.svg",
+    image: "/assets/images/irene-pereyra.svg",
   },
   4: {
     name: "Irene Pereyra4",
@@ -41,7 +41,7 @@ const testimonials = {
       "This Fellowship was a turning point in my career. I wouldn’t be where I am today without the financial support and experienced offered through the program.",
     course: "B.A. Visual Design",
     industry: "Education",
-    image: "src/assets/images/irene-pereyra.svg",
+    image: "/assets/images/irene-pereyra.svg",
   },
 };
 
@@ -83,14 +83,15 @@ const TestimonialsSlider = () => {
   return (
     <section className="testimonialsSlider relative flex flex-col items-center justify-center px-[20px]">
       <div className=" absolute top-0 left-0 z-10 h-[257px] w-full bg-[--color-primary] md:flex md:justify-center md:bg-transparent md:h-[394px]">
-        <div className="md:hidden w-[292px] h-[257px] border border-[#6254BF] bg-repeat bg-[url('src/assets/images/testimonial-pattern.png')]"></div>
-        <div className="hidden md:block w-[80%] h-full border bg-repeat bg-[url('src/assets/images/about-pattern.png')]"></div>
+        <div className="md:hidden w-[292px] h-[257px] border border-[#6254BF] bg-repeat bg-[url('/assets/images/testimonial-pattern.png')]"></div>
+        <div className="hidden md:block w-[80%] h-full border bg-repeat bg-[url('/assets/images/about-pattern.png')]"></div>
       </div>
       <Carousel
         showArrows={true}
         showStatus={false}
         showIndicators={false}
         showThumbs={false}
+        emulateTouch={true}
         infiniteLoop={true}
         autoPlay={false}
         interval={6100}
@@ -107,16 +108,16 @@ const TestimonialsSlider = () => {
         {Object.keys(testimonials).map((key) => (
           <div
             key={key}
-            className="slider flex flex-col px-[23px] md:w-[55.5%] border bg-[--color-bg]"
+            className="flex flex-col px-[23px] md:max-w-[800px] border bg-[--color-bg]"
           >
             <div className="flex justify-between items-baseline py-[30px] px-[11px] md:px-[60px]">
               <div className="flex gap-[15px]">
                 <img
-                  src="src/assets/images/irene-pereyra.svg"
+                  src="/assets/images/irene-pereyra.svg"
                   alt="avatar"
                   className="w-[45px] h-[45px] md:w-[60px] md:h-[60px] rounded-full"
                 />
-                <div className="flex flex-col justify-center items-start min-w-[143px]">
+                <div className="flex flex-col justify-center items-center min-w-[143px]">
                   <h3 className="text-[--color-primary] text-[16px] md:text-[--color-secondary] font-bold">
                     {testimonials[key].name}
                   </h3>
@@ -129,8 +130,9 @@ const TestimonialsSlider = () => {
                 <FaLinkedinIn />
               </a>
             </div>
-            <div className="flex flex-col text-start items-center justify-start px-[11px] md:px-[60px]">
-              <p className="text-[24px] leading-[29px] mt-[48px] md:mt-[33px] md:max-w-[560px]">
+
+            <div className="flex flex-col text-start self-center justify-start px-[11px] md:max-w-[560px] md:px-[60px] mb-[70px]">
+              <p className="text-[24px] leading-[29px] mt-[48px] md:mt-[33px] w-full">
                 {testimonials[key].testimonial}
               </p>
               <p className="text-[16px] leading-[24px] mt-[40px] w-full">

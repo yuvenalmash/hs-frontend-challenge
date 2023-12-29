@@ -29,7 +29,7 @@ border-box {
 /* Testimonials carousel */
 
 .carousel-root {
-  cursor: url(./assets/images/customCursor.png), auto;
+  cursor: url(/assets/images/customCursor.png), auto;
 }
 
 .carousel .slider-wrapper {
@@ -42,20 +42,10 @@ border-box {
 
 @media screen and (min-width: 768px) {
   .carousel .slider-wrapper {
-    width: 100vw;
+    width: 95vw;
   }
 
   .carousel .control-arrow {
     display: block;
-  }
-
-  .carousel .slider-wrapper ul {
-    display: flex;
-    gap: 42px;
-    padding-right: 35px;
-  }
-
-  .carousel .slider-wrapper ul li {
-    max-width: 800px;
   }
 }
