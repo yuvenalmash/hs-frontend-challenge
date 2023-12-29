@@ -4,6 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 import { number } from "@storybook/addon-knobs";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FaLinkedinIn } from "react-icons/fa";
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 
 const testimonials = {
   1: {
@@ -80,7 +81,7 @@ const TestimonialsSlider = () => {
   }, []);
 
   return (
-    <section className="testimonialsSlider relative flex flex-col items-center justify-center px-[20px] bg-green-300">
+    <section className="testimonialsSlider relative flex flex-col items-center justify-center px-[20px]">
       <div className=" absolute top-0 left-0 z-10 h-[257px] w-full bg-[--color-primary] md:flex md:justify-center md:bg-transparent md:h-[394px]">
         <div className="md:hidden w-[292px] h-[257px] border border-[#6254BF] bg-repeat bg-[url('src/assets/images/testimonial-pattern.png')]"></div>
         <div className="hidden md:block w-[80%] h-full border bg-repeat bg-[url('src/assets/images/about-pattern.png')]"></div>
@@ -106,7 +107,7 @@ const TestimonialsSlider = () => {
         {Object.keys(testimonials).map((key) => (
           <div
             key={key}
-            className="slider flex flex-col px-[23px] md:w-[55.5%] border border-lime-500 bg-orange-500"
+            className="slider flex flex-col px-[23px] md:w-[55.5%] border bg-[--color-bg]"
           >
             <div className="flex justify-between items-baseline py-[30px] px-[11px] md:px-[60px]">
               <div className="flex gap-[15px]">
@@ -116,7 +117,7 @@ const TestimonialsSlider = () => {
                   className="w-[45px] h-[45px] md:w-[60px] md:h-[60px] rounded-full"
                 />
                 <div className="flex flex-col justify-center items-start min-w-[143px]">
-                  <h3 className="text-[--color-primary] text-[16px] md:text-[--color-secondary] md:font-bold">
+                  <h3 className="text-[--color-primary] text-[16px] md:text-[--color-secondary] font-bold">
                     {testimonials[key].name}
                   </h3>
                   <p className="text-[16px] leading-[24px]">
@@ -124,7 +125,7 @@ const TestimonialsSlider = () => {
                   </p>
                 </div>
               </div>
-              <a href="#" className="text-[27px] pb-2 leading-[24px]">
+              <a href="#" className="text-[27px] text-gray-400 pb-2 leading-[24px]">
                 <FaLinkedinIn />
               </a>
             </div>
@@ -144,15 +145,15 @@ const TestimonialsSlider = () => {
       <div className="carousel-controls w-full flex justify-end gap-[8px] mr-[45%] md:hidden">
         <button
           onClick={prev}
-          className="w-[40px] h-[40px] border rounded-full"
+          className="w-[40px] h-[40px] border rounded-full flex justify-center items-center "
         >
-          prev
+          <HiOutlineChevronLeft />
         </button>
         <button
           onClick={next}
-          className="w-[40px] h-[40px] border rounded-full"
+          className="w-[40px] h-[40px] border rounded-full flex justify-center items-center"
         >
-          next
+          <HiOutlineChevronRight />
         </button>
       </div>
     </section>

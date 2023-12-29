@@ -18,7 +18,7 @@ const AboutSection = () => {
   const internshipCommitmentText = data.scholarship.internship_commitment_text;
 
   return (
-    <section className="about-section flex flex-col gap-[50px] px-5 mt-[72px] pb-[129px] items-center relative border-2 border-lime-700 bg-red-300">
+    <section className="about-section flex flex-col gap-[50px] px-5 mt-[72px] pb-[129px] items-center relative">
       <div className="relative z-20 min-w-[335px] flex flex-col items-center md:flex-row md:gap-[50px] lg:gap-[199px]">
         <div className="h-[155px] w-full border rounded-t-full md:rounded-full md:h-[338px] md:w-[338px] lg:h-[438px] lg:w-[438px] bg-repeat bg-[url('src/assets/images/about-pattern.png')]"></div>
         <img
@@ -31,17 +31,17 @@ const AboutSection = () => {
           src="src/assets/images/about-large.svg"
           alt="About image"
         />
-        <div className="w-full flex flex-col pt-[179px] pb-[56px] px-[22px] gap-8 md:py-0 md:gap-[40px] md:w-[350px] lg:w-[440spx] border-2 border-lime-700 bg-amber-300">
+        <div className="w-full flex flex-col bg-[--color-bg] pt-[179px] pb-[56px] px-[22px] gap-8 md:py-0 md:gap-[40px] md:w-[350px] lg:w-[440spx] border">
           <h2 className="text-[--color-primary] text-[35px] leading-[40px] font-bold">
             About the apprenticeship
           </h2>
           <p className="text-[18px] leading-[28px]">{aboutDescription}</p>
         </div>
       </div>
-      <div className="absolute z-10 top-[170px] min-w-full h-[401px] border-2 border-amber-700 bg-[--color-primary] -mx-5 md:hidden"></div>
+      <div className="absolute z-10 top-[170px] min-w-full h-[401px] bg-[--color-primary] -mx-5 md:hidden"></div>
 
       <div className="relative z-20 flex flex-col gap-16 min-w-[335px] md:flex-row md:gap-4 lg:gap-16">
-        <div className="flex flex-col px-[25px] gap-[24px] md:py-[32px] border-2 border-red-700 bg-amber-300">
+        <div className="flex flex-col px-[25px] gap-[24px] md:py-[32px]">
           <div className="flex flex-col md:gap-[33px]">
             <h3 className="text-[--color-primary] text-[16px]">
               <span className="md:hidden">Fellowiship value</span>
@@ -76,7 +76,7 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-8 border-2 border-red-700 bg-amber-300">
+        <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-8 md:flex-row md:gap-2 lg:gap-8">
             <div className="flex flex-col gap-2 px-[24px] pt-[40px] pb-[32px] border md:pt-[32px] md:w-[250px] lg:w-[320px]">
               <h3 className="text-[--color-primary] text-[16px]">

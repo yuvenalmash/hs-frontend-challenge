@@ -37,7 +37,7 @@ const FAQSection = () => {
     : faqs;
 
   return (
-    <section className="faq-section px-[43px] pt-[70px] pb-[113px] md:pt-[170px] md:px-[142px] bg-purple-300">
+    <section className="faq-section px-[43px] pt-[70px] pb-[113px] md:pt-[170px] md:px-[142px] flex flex-col justify-center items-center">
       <div className="flex flex-col gap-[32px] items-center md:flex-row md:justify-between">
         <h2 className="text-[--color-primary] text-[35px] leading-[40px] font-bold">
           Frequently Asked Questions
@@ -47,7 +47,7 @@ const FAQSection = () => {
           <select
             value={selectedOption}
             onChange={handleChange}
-            className="w-[284px] border border-lime-700 rounded-3xl px-[16px] py-[17px]"
+            className="w-[284px] border rounded-3xl px-[16px] py-[17px]"
           >
             <option value="" className="text-[--color-primary]">
               All

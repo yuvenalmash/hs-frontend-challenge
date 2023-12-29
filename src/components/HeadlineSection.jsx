@@ -32,7 +32,7 @@ const HeadlineSection = () => {
   });
 
   return (
-    <section className="headline-section flex flex-col items-center justify-center gap-10 px-4 border-2 border-[#ff8d4b] sm:gap-5 md:mt-[130px] md:flex-row-reverse md:items-stretch md:gap-6 lg:gap-[160px]">
+    <section className="headline-section flex flex-col items-center justify-center gap-10 px-4 sm:gap-5 md:mt-[130px] md:flex-row-reverse md:items-stretch md:gap-6 lg:gap-[160px]">
       <div className="small-title relative min-h-[172px] flex items-end md:hidden">
         <h1 className="px-[20px] text-[--color-primary] text-[35px] leading-10 font-bold relative z-10">
           {title}
@@ -40,11 +40,11 @@ const HeadlineSection = () => {
         <img
           src="src/assets/images/interaction-design.svg"
           alt="interaction-design-icon"
-          className="w-[133px] h-[133px] border border-orange-400 rotate-[20.048deg] absolute bottom-0 right-0 transform -translate-y-5 -translate-x-5"
+          className="w-[133px] h-[133px] rotate-[20.048deg] absolute bottom-0 right-0 transform -translate-y-5 -translate-x-5"
         />
       </div>
 
-      <div className="flex flex-col gap-5 px-[20px] sm:min-w-[240px] max-w-[480px]">
+      <div className="flex flex-col gap-5 px-[20px] sm:min-w-[240px]  md:w-[480px]">
         <div className="flex flex-col gap-2 md:flex-row-reverse md:items-center md:justify-end md:gap-[40px]">
           <div className="flex md:flex-col md:gap-[10px]">
             <p className="text-sm">Powered by: </p>
@@ -89,15 +89,15 @@ const HeadlineSection = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-8 px-7 sm:px-0 sm:min-w-[220px] md:max-w-[440px]">
-        <div className="relative border border-black hidden md:block">
-          <h1 className="text-[--color-primary] text-[48px] leading-[56px] font-bold hidden md:block border border-black">
+      <div className="flex flex-col gap-8 px-7 sm:px-0 sm:w-[350px] md:max-w-[440px]">
+        <div className="relative hidden md:block">
+          <h1 className="text-[--color-primary] text-[48px] leading-[56px] font-bold hidden md:block">
             {title}
           </h1>
           <img
             src="src/assets/images/interaction-design.svg"
             alt="interaction-design-icon"
-            className="w-[206px] h-[206px] border border-orange-400 rotate-[20deg] absolute top-0 right-0 transform -translate-y-12 -translate-x-2 hidden md:block"
+            className="w-[206px] h-[206px] rotate-[20deg] absolute top-0 right-0 transform -translate-y-12 -translate-x-2 hidden md:block"
           />
         </div>
 
