@@ -107,7 +107,7 @@ const TestimonialsSlider = () => {
         {Object.keys(testimonials).map((key) => (
           <div
             key={key}
-            className="slider flex flex-col px-[23px] md:w-[55.5%] border bg-[--color-bg]"
+            className="slider flex flex-col px-[23px] md:w-[55.5%] md:max-w-[800px] border bg-[--color-bg]"
           >
             <div className="flex justify-between items-baseline py-[30px] px-[11px] md:px-[60px]">
               <div className="flex gap-[15px]">
@@ -129,8 +129,8 @@ const TestimonialsSlider = () => {
                 <FaLinkedinIn />
               </a>
             </div>
-            <div className="flex flex-col text-start items-center justify-start px-[11px] md:px-[60px]">
-              <p className="text-[24px] leading-[29px] mt-[48px] md:mt-[33px] md:max-w-[560px]">
+            <div className="flex flex-col text-start items-center justify-start px-[11px] md:max-w-[560px] md:px-[60px] mb-[70px]">
+              <p className="text-[24px] leading-[29px] mt-[48px] md:mt-[33px] w-full">
                 {testimonials[key].testimonial}
               </p>
               <p className="text-[16px] leading-[24px] mt-[40px] w-full">
