@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectData } from "../app/habourSpaceSlice";
+import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
 
 const FAQSection = () => {
   const data = useSelector(selectData);
@@ -12,6 +13,7 @@ const FAQSection = () => {
 
   // drop-down menu
   const [selectedOption, setSelectedOption] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
@@ -35,7 +37,7 @@ const FAQSection = () => {
     : faqs;
 
   return (
-    <section className="faq-section px-[43px] pt-[70px] pb-[113px] md:pt-[170px] md:px-[142px] bg-purple-300">
+    <section className="faq-section px-[43px] pt-[70px] pb-[113px] md:pt-[170px] md:px-[142px] flex flex-col justify-center items-center">
       <div className="flex flex-col gap-[32px] items-center md:flex-row md:justify-between">
         <h2 className="text-[--color-primary] text-[35px] leading-[40px] font-bold">
           Frequently Asked Questions
@@ -45,7 +47,7 @@ const FAQSection = () => {
           <select
             value={selectedOption}
             onChange={handleChange}
-            className="w-[284px] border border-lime-700 rounded-3xl px-[16px] py-[17px]"
+            className="w-[284px] border rounded-3xl px-[16px] py-[17px]"
           >
             <option value="" className="text-[--color-primary]">
               All
@@ -69,24 +71,32 @@ const FAQSection = () => {
         <hr className="border w-full mb-[32px] hidden md:block" />
         {filteredFaqs.map((faq, index) => (
           <React.Fragment key={index}>
-            <div className="flex justify-between pb-[16px]">
-              <p className="text-[--color-primary]">{faq.type}</p>
-              <div className="flex flex-col md:w-[300px] lg:w-[500px]">
+            <div className="flex justify-between pb-[16px] sm:gap-5">
+              <p className="text-[--color-primary] hidden md:block">
+                {faq.type}
+              </p>
+              <div className="flex flex-col  md:w-[300px] lg:w-[500px]">
                 <p className="font-bold">{faq.question}</p>
-                <p
-                  className={`mt-[20px] ${
-                    visibleQuestions[index] ? "" : "hidden"
+                <div
+                  className={`overflow-hidden transition-all duration-1000 ease-in-out ${
+                    visibleQuestions[index]
+                      ? "h-auto opacity-100"
+                      : "h-0 opacity-0"
                   }`}
                 >
-                  {faq.answer[0].data}
-                </p>
+                  <p className="mt-[20px]">{faq.answer[0].data}</p>
+                </div>
               </div>
               <button
-                className="w-[32px] h-[32px] border rounded-full"
+                className={`w-[32px] h-[32px] border rounded-full flex justify-center items-center ${
+                  visibleQuestions[index]
+                    ? "bg-[--color-primary] transform rotate-480 transition-all duration-1000"
+                    : ""
+                }`}
                 onClick={() => toggleQuestion(index)}
               >
                 <p className="text-2xl">
-                  {visibleQuestions[index] ? "-" : "+"}
+                  {visibleQuestions[index] ? <HiOutlineMinus /> : <HiOutlinePlus />}
                 </p>
               </button>
             </div>

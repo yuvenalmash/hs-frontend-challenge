@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #685DC5;
+  --color-primary: #685dc5;
   --color-secondary: #535353;
-  --color-tertiary: #F2F2F2;
-  --color-border: #DADADA;
-  --color-bg: #FFFFFF;
+  --color-tertiary: #f2f2f2;
+  --color-border: #dadada;
+  --color-bg: #ffffff;
 }
 
 * {
@@ -24,4 +24,38 @@ body {
 
 border-box {
   border: 1px solid var(--color-border);
+}
+
+/* Testimonials carousel */
+
+.carousel-root {
+  cursor: url(./assets/images/customCursor.png), auto;
+}
+
+.carousel .slider-wrapper {
+  width: 335px;
+}
+
+.carousel .control-arrow {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .carousel .slider-wrapper {
+    width: 100vw;
+  }
+
+  .carousel .control-arrow {
+    display: block;
+  }
+
+  .carousel .slider-wrapper ul {
+    display: flex;
+    gap: 42px;
+    padding-right: 35px;
+  }
+
+  .carousel .slider-wrapper ul li {
+    max-width: 800px;
+  }
 }
