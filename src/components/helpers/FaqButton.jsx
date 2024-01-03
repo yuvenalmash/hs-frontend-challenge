@@ -5,7 +5,7 @@ import "./FaqButton.css";
 const FaqButton = ({ index, visibleQuestions, toggleQuestion }) => {
   return (
     <button
-      className="faq-button border w-[42px] h-[42px] flex rounded-full justify-center items-center p-1"
+      className="faq-button border w-[32px] h-[32px] flex rounded-full justify-center items-center p-[2px]"
       onClick={() => toggleQuestion(index)}
     >
       <div
@@ -16,7 +16,7 @@ const FaqButton = ({ index, visibleQuestions, toggleQuestion }) => {
             : "rotate-out transition-all duration-1000"
         }`}
       >
-        <p className="text-lg">
+        <p className="text-md">
           {visibleQuestions[index] ? <HiOutlineMinus /> : <HiOutlinePlus />}
         </p>
       </div>
