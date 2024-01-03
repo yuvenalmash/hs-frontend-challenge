@@ -71,11 +71,11 @@ const FAQSection = () => {
         <hr className="border w-full mb-[32px] hidden md:block" />
         {filteredFaqs.map((faq, index) => (
           <React.Fragment key={index}>
-            <div className="flex justify-between pb-[16px] sm:gap-5">
-              <p className="text-[--color-primary] hidden md:block">
+            <div className="flex justify-between pb-[16px] gap-4 sm:gap-10 ">
+              <p className="text-[--color-primary] hidden md:block w-[150px] lg:w-[170px]">
                 {faq.type}
               </p>
-              <div className="flex flex-col  md:w-[300px] lg:w-[500px]">
+              <div className="flex flex-col max-w-[235px] sm:max-w-[280px]  md:max-w-[300px] lg:max-w-[500px]">
                 <p className="font-bold">{faq.question}</p>
                 <div
                   className={`overflow-hidden transition-all duration-1000 ease-in-out ${
