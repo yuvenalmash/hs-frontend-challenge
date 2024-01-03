@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectData } from "../app/habourSpaceSlice";
+import FaqButton from "./helpers/FaqButton";
 import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
 
 const FAQSection = () => {
@@ -96,9 +97,14 @@ const FAQSection = () => {
                 onClick={() => toggleQuestion(index)}
               >
                 <p className="text-2xl">
-                  {visibleQuestions[index] ? <HiOutlineMinus /> : <HiOutlinePlus />}
+                  {visibleQuestions[index] ? (
+                    <HiOutlineMinus />
+                  ) : (
+                    <HiOutlinePlus />
+                  )}
                 </p>
               </button>
+              <FaqButton faq={faq} onClick={() => toggleQuestion(index)} />
             </div>
             <hr className="border w-full mb-[18px] md:mb-[32px]" />
           </React.Fragment>
