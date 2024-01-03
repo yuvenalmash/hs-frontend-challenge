@@ -1,40 +1,27 @@
 // FaqButton.jsx
 import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
+import "./FaqButton.css";
 
-const FaqButton = ({ faq, onClick }) => (
-  // <button
-  //   className="faq-button w-40 h-40 border-2 rounded-full flex justify-center items-center p-2"
-  //   onClick={onClick}
-  // >
-  //   <div
-  //     className={`flex justify-center items-center border-2 border-red w-full h-full rounded-full
-  //     ${
-  //       faq.visible
-  //         ? "faq-button-opened-outline bg-[--color-primary] text-[--color-bg]"
-  //         : "faq-button-closed"
-  //     }`}
-  //   >
-  //     <div
-  //       className={`flex justify-center items-center w-full h-full rounded-full m-2
-  //       ${faq.visible
-  //         ? "faq-button-opened-in bg-[--color-primary] text-[--color-bg]"
-  //         : "faq-button-closed"
-  //       }`}
-  //     >
-  //       <p className="text-4xl">
-  //         {faq.visible ? <HiOutlineMinus /> : <HiOutlinePlus />}
-  //       </p>
-  //     </div>
-  //   </div>
-  // </button>
-  <button
-    className="relative faq-button w-40 h-40 border-2 rounded-full flex justify-center items-center"
-    onClick={onClick}
-  >
-    <div className="lds-ring">
-      <div></div>
-    </div>
-  </button>
-);
+const FaqButton = ({ index, visibleQuestions, toggleQuestion }) => {
+  return (
+    <button
+      className="faq-button border w-[42px] h-[42px] flex rounded-full justify-center items-center p-1"
+      onClick={() => toggleQuestion(index)}
+    >
+      <div
+        className={`faq-button-inner flex justify-center items-center w-full h-full rounded-full
+        ${
+          visibleQuestions[index]
+            ? "rotate-in transition-all duration-1000"
+            : "rotate-out transition-all duration-1000"
+        }`}
+      >
+        <p className="text-lg">
+          {visibleQuestions[index] ? <HiOutlineMinus /> : <HiOutlinePlus />}
+        </p>
+      </div>
+    </button>
+  );
+};
 
 export default FaqButton;
