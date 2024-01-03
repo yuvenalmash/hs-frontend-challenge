@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectData } from "../app/habourSpaceSlice";
 import FaqButton from "./helpers/FaqButton";
-import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
 
 const FAQSection = () => {
   const data = useSelector(selectData);
@@ -88,23 +87,7 @@ const FAQSection = () => {
                   <p className="mt-[20px]">{faq.answer[0].data}</p>
                 </div>
               </div>
-              <button
-                className={`w-[32px] h-[32px] border rounded-full flex justify-center items-center ${
-                  visibleQuestions[index]
-                    ? "bg-[--color-primary] transform rotate-480 transition-all duration-1000"
-                    : ""
-                }`}
-                onClick={() => toggleQuestion(index)}
-              >
-                <p className="text-2xl">
-                  {visibleQuestions[index] ? (
-                    <HiOutlineMinus />
-                  ) : (
-                    <HiOutlinePlus />
-                  )}
-                </p>
-              </button>
-              <FaqButton faq={faq} onClick={() => toggleQuestion(index)} />
+              <FaqButton index={index} visibleQuestions={visibleQuestions} toggleQuestion={toggleQuestion} />
             </div>
             <hr className="border w-full mb-[18px] md:mb-[32px]" />
           </React.Fragment>
