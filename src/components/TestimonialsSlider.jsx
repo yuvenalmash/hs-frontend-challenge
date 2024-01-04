@@ -92,7 +92,7 @@ const TestimonialsSlider = () => {
         showIndicators={false}
         showThumbs={false}
         emulateTouch={true}
-        infiniteLoop={true}
+        infiniteLoop={false}
         autoPlay={false}
         interval={6100}
         selectedItem={currentSlide}

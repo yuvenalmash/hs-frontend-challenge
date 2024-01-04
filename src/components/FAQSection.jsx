@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectData } from "../app/habourSpaceSlice";
-import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
+import FaqButton from "./helpers/FaqButton";
 
 const FAQSection = () => {
   const data = useSelector(selectData);
@@ -71,11 +71,11 @@ const FAQSection = () => {
         <hr className="border w-full mb-[32px] hidden md:block" />
         {filteredFaqs.map((faq, index) => (
           <React.Fragment key={index}>
-            <div className="flex justify-between pb-[16px] sm:gap-5">
-              <p className="text-[--color-primary] hidden md:block">
+            <div className="flex justify-between pb-[16px] gap-4 sm:gap-10 ">
+              <p className="text-[--color-primary] hidden md:block w-[150px] lg:w-[170px]">
                 {faq.type}
               </p>
-              <div className="flex flex-col  md:w-[300px] lg:w-[500px]">
+              <div className="flex flex-col max-w-[235px] sm:max-w-[280px]  md:max-w-[300px] lg:max-w-[500px]">
                 <p className="font-bold">{faq.question}</p>
                 <div
                   className={`overflow-hidden transition-all duration-1000 ease-in-out ${
@@ -87,18 +87,7 @@ const FAQSection = () => {
                   <p className="mt-[20px]">{faq.answer[0].data}</p>
                 </div>
               </div>
-              <button
-                className={`w-[32px] h-[32px] border rounded-full flex justify-center items-center ${
-                  visibleQuestions[index]
-                    ? "bg-[--color-primary] transform rotate-480 transition-all duration-1000"
-                    : ""
-                }`}
-                onClick={() => toggleQuestion(index)}
-              >
-                <p className="text-2xl">
-                  {visibleQuestions[index] ? <HiOutlineMinus /> : <HiOutlinePlus />}
-                </p>
-              </button>
+              <FaqButton index={index} visibleQuestions={visibleQuestions} toggleQuestion={toggleQuestion} />
             </div>
             <hr className="border w-full mb-[18px] md:mb-[32px]" />
           </React.Fragment>

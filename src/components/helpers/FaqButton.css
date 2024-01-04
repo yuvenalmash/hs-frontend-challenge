@@ -1,0 +1,59 @@
+/* FaqButton.css */
+.faq-button-inner {
+  transition: transform 1s ease-in-out;
+}
+
+.faq-button-inner.rotate-in {
+  background-color: var(--color-primary);
+  color: var(--color-tertiary);
+  animation: border-rotate-in 1.5s cubic-bezier(0.5, 0, 0.5, 1) 1;
+}
+
+.faq-button-inner.rotate-out {
+  background-color: var(--color-bg);
+  border: 2px var(--color-border) solid;
+  animation: border-rotate-out 1.5s cubic-bezier(0.5, 0, 0.5, 1) 1;
+}
+
+@keyframes border-rotate-in {
+  0% {
+    transform: rotate(0deg);
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    border: 2px var(--color-border) solid;
+    border-color: var(--color-border) var(--color-border) var(--color-primary)
+      var(--color-border);
+  }
+
+  50% {
+    transform: rotate(180deg);
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    border: 2px var(--color-border) solid;
+    border-color: var(--color-border) var(--color-border) var(--color-border)
+      var(--color-primary);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes border-rotate-out {
+  0% {
+    transform: rotate(0deg);
+    border-color: var(--color-border) var(--color-border) var(--color-primary)
+      var(--color-border);
+  }
+
+  50% {
+    transform: rotate(360deg);
+    color: var(--color-primary);
+    border-color: var(--color-border) var(--color-border) var(--color-primary)
+      var(--color-border);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
